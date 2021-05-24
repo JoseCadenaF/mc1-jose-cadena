@@ -1,0 +1,69 @@
+package java.util;
+
+public class TallerClase16 {
+
+	public static void main(String[] args) {
+		double sumx = 0,sumy=0,sumxy=0,sumxc=0,promx=0,promy=0;
+	       
+        System.out.println("Cantidad de datos");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+         double[] x = new double[n];
+         System.out.println("Datos en x");
+         for (int index=0; index < n; index++)
+        {
+             System.out.println("Ingrese el valor");
+             double p = sc.nextDouble();
+           x[index]= p;
+            
+        }
+        double[] y = new double[n];
+        System.out.println("Datos en Y");
+         for (int index=0; index < n; index++)
+        {
+              System.out.println("Ingrese el valor");
+             double p = sc.nextDouble();
+           y[index]= p;
+           
+            
+        }
+         for (int index=0; index < n; index++)
+        {
+             
+           sumx=x[index]+sumx;
+           
+            
+        }
+         for (int index=0; index < n; index++)
+        {
+             
+           sumy=y[index]+sumy;
+           
+            
+        }
+         for (int index=0; index < n; index++)
+        {
+             
+           sumxy=(y[index]*x[index])+sumxy;
+           
+            
+        }
+         for (int index=0; index < n; index++)
+        {
+             
+          sumxc= (int) ((Math.pow(x[index], 2))+sumxc);
+           
+            
+        }
+         promx= sumx/n;
+         promy=sumy/n;
+         double a1,a2,a3,a4;
+         a1=(double) (((n*sumxy)-(sumx*sumy))/((n*sumxc)- Math.pow(sumx, 2)));
+         a2= promy-(a1*promx) ;
+         System.out.print(a2+"+"+a1+"X");
+
+		
+
+	}
+
+}
